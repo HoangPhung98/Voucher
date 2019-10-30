@@ -90,7 +90,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         userRef = database.getReference("user");
         voucherRef = database.getReference("voucher");
 
-        //Resaurant.CreateDataScript(voucherRef);
+        Resaurant.CreateDataScript(voucherRef);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -169,36 +169,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onResume() {
         super.onResume();
         Log.d("KIG","resume");
+        if(!gotTheGPS){
+            LocationManager lm = (LocationManager)
+                    getSystemService(Context.LOCATION_SERVICE ) ;
+            gps_enabled = false;
+            try {
+                gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER ) ;
+            } catch (Exception e) {
+                e.printStackTrace() ;
+            }
 
-        LocationManager lm = (LocationManager)
-                getSystemService(Context.LOCATION_SERVICE ) ;
-        gps_enabled = false;
-        try {
-            gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER ) ;
-        } catch (Exception e) {
-            e.printStackTrace() ;
+            if(gps_enabled)  getDeviceLocation(0);
+            else  Toast.makeText(MapsActivity.this, "Please enable GPS", Toast.LENGTH_LONG).show();
+
+            updateLocationUI();
         }
 
-        if(gps_enabled)  getDeviceLocation(0);
-        else  Toast.makeText(MapsActivity.this, "Please enable GPS", Toast.LENGTH_LONG).show();
-
-        updateLocationUI();
     }
 
     private void addVoucherValueListener() {
+        if(voucherValueListener==null){
+            voucherValueListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    getListRestaurant(dataSnapshot);
+                }
 
-        voucherValueListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                getListRestaurant(dataSnapshot);
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            };
+            voucherRef.addValueEventListener(voucherValueListener);
+        }
 
-            }
-        };
-        voucherRef.addValueEventListener(voucherValueListener);
     }
 
     private void drawRestaurantMaker() {
@@ -207,10 +211,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
     private void setUpCluster() {
-        clusterManager = new ClusterManager<Resaurant>(this, mMap);
-        mMap.setOnCameraIdleListener(clusterManager);
-        mMap.setOnMarkerClickListener(clusterManager);
+        if(clusterManager==null)
+        {
+            clusterManager = new ClusterManager<Resaurant>(this, mMap);
+            mMap.setOnCameraIdleListener(clusterManager);
+            mMap.setOnMarkerClickListener(clusterManager);
+            clusterManager.setOnClusterItemClickListener(new ClusterManager.OnClusterItemClickListener<Resaurant>() {
+                @Override
+                public boolean onClusterItemClick(Resaurant resaurant) {
+                    openVoucherPagerActivity(resaurant);
+                    return true;
+                }
+            });
+        }
+    }
 
+    private void openVoucherPagerActivity(Resaurant resaurant) {
+        Intent intent = new Intent(MapsActivity.this, SlideVoucherActivity.class);
+        intent.putParcelableArrayListExtra("LIST_VOUCHER", resaurant.getListVoucher());
+        startActivity(intent);
     }
 
 
@@ -221,6 +240,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Address address;
 
         listRestaurant = new ArrayList<>();
+        listRestaurant.clear();
         for(DataSnapshot i : dataSnapshot.getChildren()){
             Resaurant resaurant = i.getValue(Resaurant.class);
             try {
@@ -235,6 +255,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             listRestaurant.add(resaurant);
+            Log.d("'KIG",resaurant.getId());
         }
 
         drawRestaurantMaker();
@@ -313,7 +334,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                         new LatLng(mLastKnownLocation.getLatitude(),
                                                 mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                                Log.d("KIG","GET my location");
+                                Log.d("KIG","GET my location ...");
                             } else {
                                     Log.d("KIG", "Current location is null. Using defaults.");
                                     Log.e("Loi", "Exception: %s", task.getException());
@@ -350,7 +371,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     new LatLng(mLastKnownLocation.getLatitude(),
                                             mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                            Log.d("KIG","GET my location");
+                            Log.d("KIG","GET my location 0000000000");
                         } else {
                             getDeviceLocation(0);
                         }

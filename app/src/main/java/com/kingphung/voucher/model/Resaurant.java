@@ -18,57 +18,57 @@ public class Resaurant implements ClusterItem {
         Resaurant resaurant = new Resaurant("r1","Restauran 1",
                     "1 Đại Cồ Việt, P. Đồng Tâm, Quận Hai Bà Trưng, Hà Nội\n",
                            new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=0; i<5;i++) resaurant.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=0; i<5;i++) resaurant.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant.getId()).setValue(resaurant);
         Resaurant resaurant2 = new Resaurant("r2","Restauran 2",
                 "54 Giải Phóng, P. Đồng Tâm, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant2.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant2.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant2.getId()).setValue(resaurant2);
         Resaurant resaurant3 = new Resaurant("r3","Restauran 2",
                 "353 Phố Huế, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant3.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant3.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant3.getId()).setValue(resaurant3);
         Resaurant resaurant4 = new Resaurant("r4","Restauran 2",
                 "123 Phố Huế, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant4.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant4.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant4.getId()).setValue(resaurant4);
         Resaurant resaurant5 = new Resaurant("r5","Restauran 2",
                 "3 Ngõ Bà Triệu, Bà Triệu, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant5.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant5.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant5.getId()).setValue(resaurant5);
         Resaurant resaurant6 = new Resaurant("r6","Restauran 2",
                 "3 Ngõ Bà Triệu, Bà Triệu, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant6.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant6.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant6.getId()).setValue(resaurant6);
         Resaurant resaurant7 = new Resaurant("r7","Restauran 2",
                 "Ngõ 433 Bạch Mai, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant7.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant7.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant7.getId()).setValue(resaurant7);
         Resaurant resaurant8 = new Resaurant("r8","Restauran 2",
                 "Ngõ 433 Bạch Mai, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant8.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant8.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant8.getId()).setValue(resaurant8);
         Resaurant resaurant9 = new Resaurant("r9","Restauran 2",
                 "23 Ngõ 357 Bạch Mai, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant9.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant9.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant9.getId()).setValue(resaurant9);
         Resaurant resaurant10 = new Resaurant("r10","Restauran 2",
                 "2 Lê Thanh Nghị, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant10.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant10.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant10.getId()).setValue(resaurant10);
         Resaurant resaurant11 = new Resaurant("r11","Restauran 2",
                 "125 Lê Thanh Nghị, Quận Hai Bà Trưng, Hà Nội",
                new MyLatLng(0,0), new ArrayList<Voucher>(), 5);
-        for(int i=100; i<105;i++) resaurant11.listVoucher.add(new Voucher(i+"", "title", "description","link","link_img"));
+        for(int i=100; i<105;i++) resaurant11.listVoucher.add(new Voucher(i+"", "title", "description","link","https://suno.vn/blog/wp-content/uploads/2017/09/4-bi-quyet-ban-do-an-vat-qua-mang-kiem-tien-trieu-moi-ngay.jpg"));
         databaseReference.child(resaurant11.getId()).setValue(resaurant11);
     }
     public Resaurant() {
