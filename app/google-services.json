@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "523802993305",
+    "firebase_url": "https://voucher-f1190.firebaseio.com",
+    "project_id": "voucher-f1190",
+    "storage_bucket": "voucher-f1190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523802993305:android:a964f8c961e46588688e08",
+        "android_client_info": {
+          "package_name": "com.kingphung.voucher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523802993305-o1dur5q2tdsdfmvcqnm5o40i6j2utgj3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kingphung.voucher",
+            "certificate_hash": "8aded3cb8d9aee7be896d48842f752c52318ae6a"
+          }
+        },
+        {
+          "client_id": "523802993305-iab306oc5ls2gmk1oog9vbj3guogqnkm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtmg-TZAO5oWSRyAhQ9RwXWPmj6CUA-Ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523802993305-iab306oc5ls2gmk1oog9vbj3guogqnkm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
